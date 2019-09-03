@@ -16,7 +16,7 @@ server.on('request', function(req,res){
     if(err){
         throw err
     }
-    response.end(data);
+    res.end(data);
   })
 });
 server.listen(3000, function(){
