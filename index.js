@@ -8,11 +8,11 @@ http.createServer(function (req, res) {
   });
   req.on('end', function () {
     post = querystring.parse(post);
-    if(post.name) { // 输出提交的数据
+    if(post.name) { 
         res.write(body.name);
-    } else {  // 输出表单
+    } else {
         res.write(postHTML);
     }
-    res.end();
+    res.end('Hello World\n');
   });
-}).listen(80);
+}).listen(3000);
