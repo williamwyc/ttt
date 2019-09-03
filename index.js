@@ -9,12 +9,12 @@ var root = path.resolve();
 var server = http.createServer();
 
 server.on('request', function(req,res){
-  var pathname = url.parse(req.url).pathname;
-  var filepath = path.join(root,pathname);
+  // var pathname = url.parse(req.url).pathname;
+  // var filepath = path.join(root,pathname);
   res.writeHead(200,{'Content-Type':'text/html'})
-  fs.readFile(filepath,function(err,data){
+  fs.readFile('./index.html',function(err,data){
     if(err){
-        throw err ;
+        throw err
     }
     response.end(data);
   })
