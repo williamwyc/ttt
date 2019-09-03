@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
   });
   req.on('end', function () {
     post = querystring.parse(post);
-    if(post.name {
+    if(post.name) {
       res.write(body.name);
   } else { 
       
