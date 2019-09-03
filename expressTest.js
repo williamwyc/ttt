@@ -11,7 +11,8 @@ app.get('/', function (req, res) {
 
 app.post('/process_post', urlencodedParser, function (req, res) {
  
-    var response = { "first_name":req.body.name}
+    console.log(req.body)
+    var response = {"first_name": req.body.name}
     console.log("Name: "+response);
     res.end(JSON.stringify(response));
 })
