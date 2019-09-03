@@ -12,6 +12,7 @@ app.get('/', function (req, res) {
 app.post('/', urlencodedParser, function (req, res) {
     console.log("Get Post");
     res.send("Hello " + req.body.name + " " + Date.now());
+    res.sendFile( __dirname + "/" + "play.html" );
     var response = {"name": req.body.name}
     res.send(JSON.stringify(response));
 })
