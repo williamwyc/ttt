@@ -11,10 +11,9 @@ app.get('/', function (req, res) {
 
 app.post('/', urlencodedParser, function (req, res) {
     console.log("Get Post");
+    res.send("Hello " + req.body.name + " " + Date.now());
     var response = {"name": req.body.name}
     res.send(JSON.stringify(response));
-    var date = new Date()
-    res.send("Hello " + req.body.name + " " + Date.now());
 })
 
 var server = app.listen(3000, function () {
