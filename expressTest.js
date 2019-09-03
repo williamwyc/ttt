@@ -9,12 +9,11 @@ app.get('/', function (req, res) {
     res.sendFile( __dirname + "/" + "index.html" );
 })
 
-app.post('/process_post', urlencodedParser, function (req, res) {
- 
-    console.log(req.body)
-    var response = {"first_name": req.body.name}
-    console.log("Name: "+response);
-    res.end(JSON.stringify(response));
+app.post('/', urlencodedParser, function (req, res) {
+    var response = {"name": req.body.name}
+    res.send(JSON.stringify(response));
+    var date = new Date()
+    res.send("Hello " + req.body.name + " " + Date.now());
 })
 
 var server = app.listen(3000, function () {
