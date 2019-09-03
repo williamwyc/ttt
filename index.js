@@ -11,8 +11,7 @@ http.createServer(function (req, res) {
     if(post.name) { 
         res.write(body.name);
     } else {
-        res.write(postHTML);
+        res.write({'Content-Type':'index.html'});
     }
-    res.end('Hello World\n');
   });
 }).listen(3000);
