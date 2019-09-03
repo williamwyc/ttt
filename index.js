@@ -24,13 +24,11 @@ http.createServer(function (req, res) {
   });
   req.on('end', function () {
     post = querystring.parse(post);
-    console.log(post.name)
-    // if(post.name) { 
-    //     res.write(body.name);
-    // } else {
-    //     res.writeHead({'Content-Type':'index.html'});
-
-    // }
+    if(post.name {
+      res.write(body.name);
+  } else { 
+      
+  }
   });
 }).listen(3000, function(){
   console.log('Listening...')
