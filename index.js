@@ -4,11 +4,11 @@ var app = express();
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 
-app.use(express.static(__dirname));
+app.use("/page",express.static(__dirname+'/page'));
 app.use("/script",express.static(__dirname + '/script'));
 
 app.get('/', function (req, res) {
-    res.sendFile( __dirname + "/" + "index.html" );
+    res.sendFile( __dirname + "/page" + "/index.html" );
 })
 
 app.listen(3000, function(){
