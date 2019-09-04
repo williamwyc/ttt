@@ -10,6 +10,7 @@
                     type:'post',
                     dataType:'json',
                     success:function(data){
+                        console.log(data)
                         $("#name").text(data.name+" ")
                         $("#date").text(data.date)
                     }
