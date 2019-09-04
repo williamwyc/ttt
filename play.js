@@ -8,4 +8,9 @@ router.get('/play',function(req,res){
 
 })
 
+router.post('/',function(req,res){
+    res.sendFile(path.join(__dirname+'/..'+'/html/ttt.html'));
+
+})
+
 module.exports = router;
