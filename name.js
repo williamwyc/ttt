@@ -5,7 +5,6 @@ $(document).ready(function(){
             date: Date.now()
         }
         console.log("data got") // 1
-        //e.preventDefault();
         $.ajax({
             type: 'post',
             url: '/play',
@@ -13,10 +12,9 @@ $(document).ready(function(){
             data : JSON.stringify(data),
             dataType:"json",
             success : function(data) {
-                console.log("data sent" + data);
                 window.location.href='/play'
-                $("#name").text(data.name+" ")
-                $("#date").text(data.date)
+                // $("#name").text(data.name+" ")
+                // $("#date").text(data.date)
             }
         })
     })
