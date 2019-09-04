@@ -3,8 +3,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
+var name = require(name.js);
+var play = require(play.js)
 
-app.use('/public', express.static('public'));
 
 app.get('/', function (req, res) {
     res.sendFile( __dirname + "/" + "index.html" );
