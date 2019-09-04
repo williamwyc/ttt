@@ -3,7 +3,8 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 var jsonParser = bodyParser.json()
-
+var name;
+var date;
 
 router.get('/',function(req,res){
     console.log("Router get get")
@@ -13,12 +14,15 @@ router.get('/',function(req,res){
 router.post('/',jsonParser,function(req,res){
     console.log("Router get post") //1
     console.log(req.body)
+    name = req.body.name
+    date = req.body.date
     res.redirect("/play.html")
     //res.json({})
 })
 
 router.post('/data',jsonParser,function(req,res){
     console.log("Getting name") //1
+    console.log(name)
     res.json({
         name: name,
         date: date
