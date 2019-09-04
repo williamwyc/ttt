@@ -9,7 +9,7 @@ var play = require("./play.js")
 app.use("/play", play)
 app.use(express.static(__dirname));
 
-app.get('/', function (req, res) {
+app.get('/ttt', function (req, res) {
     res.sendFile( __dirname + "/index.html" );
 })
 
