@@ -13,6 +13,7 @@ app.get('/', function (req, res) {
     res.sendFile( __dirname + "/index.html" );
 })
 app.post('/',function(req,res){
+    res.sendFile(__dirname + '/play.html');
     console.log("Post get")
 })
 
