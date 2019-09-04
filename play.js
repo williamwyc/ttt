@@ -7,7 +7,7 @@ var name = null;
 var date = null;
 
 
-router.get('/',jsonParser,function(req,res){
+router.post('/t',jsonParser,function(req,res){
     console.log("Router get get")
     res.sendFile( __dirname + "/../play.html" );
 })
