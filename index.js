@@ -6,16 +6,16 @@ var urlencodedParser = bodyParser.urlencoded({extended: false})
 
 var play = require("./play.js")
 
-app.use("/", play)
+app.use("/play", play)
 app.use(express.static(__dirname));
 
 app.get('/', function (req, res) {
     res.sendFile( __dirname + "/index.html" );
 })
-app.post('/play',function(req,res){
-    console.log("Post get")
-    res.sendFile(__dirname + '/play.html');
-})
+// app.post('/play',function(req,res){
+//     console.log("Post get")
+//     res.sendFile(__dirname + '/play.html');
+// })
 
 app.listen(3000, function(){
   console.log("Listening...")

@@ -8,7 +8,7 @@ $(document).ready(function(){
         e.preventDefault();
         $.ajax({
             type: 'post',
-            url: '/',
+            url: '/play',
             contentType: "application/json;charset=UTF-8",
             data : JSON.stringify(data),
             dataType:"json",
