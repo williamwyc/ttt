@@ -12,7 +12,7 @@ $(document).ready(function(){
             success : function() {
                 $("#name").text(data.name+" ")
                 $("#date").text(data.date)
-                window.location.href("../play.html")
+                window.location.href("/play.html")
             }
         })
     })

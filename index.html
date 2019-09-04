@@ -3,11 +3,12 @@
         <title>Tic-Tac-Toe</title>
         <link rel="stylesheet" type="text/css" href="/index.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="/script/name.js"></script>
+        <script src="/name.js"></script>
     </head>
     <body>
-        <b>Hello, </b>
-        <b id = 'name'></b>
-        <b id = 'date'></b>
+        <form id="play" action="/play" method="post">
+            Name: <input id = "name" name = "name"><br>
+            <input type="submit" value = "Submit">
+        </form>
     </body>
 </html>
