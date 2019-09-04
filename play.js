@@ -14,7 +14,6 @@ router.get('/',function(req,res){
 
 router.post('/',jsonParser,function(req,res){
     console.log("Router get post") //1
-    console.log(req.body)
     res.json({})
     console.log("Json Sent")
 })
