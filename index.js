@@ -6,7 +6,7 @@ var urlencodedParser = bodyParser.urlencoded({extended: false})
 
 var play = require("./play.js")
 
-app.use("/play", play)
+app.use("/", play)
 app.use(express.static(__dirname));
 
 app.get('/', function (req, res) {

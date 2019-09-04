@@ -3,7 +3,8 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 
-router.get('/play',function(req,res){
+router.get('/',function(req,res){
+    console.log("Router get Get")
     //res.sendFile(path.join(__dirname+'/play.html'));
 
 })

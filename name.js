@@ -4,7 +4,7 @@ $(document).ready(function(){
             name: $("#name").val(),
             date: Date.now()
         }
-        console.log("data got")
+        console.log("data got") // 1
         e.preventDefault();
         $.ajax({
             type: 'post',
