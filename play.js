@@ -25,7 +25,7 @@ router.post('/data',jsonParser,function(req,res){
         name: name,
         date: date
     })
-    console.log(name,data)
+    console.log(name,date)
     console.log("Json Sent")
 })
 
