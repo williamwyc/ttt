@@ -5,6 +5,7 @@ $(document).ready(function(){
             date: Date.now()
         }
         console.log("data got")
+        e.preventDefault();
         $.ajax({
             type: 'post',
             url: '/',
@@ -12,7 +13,7 @@ $(document).ready(function(){
             data : JSON.stringify(data),
             dataType:"json",
             success : function(data) {
-                console.log("data sent");
+                console.log("data sent" + data);
                 window.location.href='/play'
                 $("#name").text(data.name+" ")
                 $("#date").text(data.date)
