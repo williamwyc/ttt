@@ -8,14 +8,13 @@ var date = null;
 
 
 router.get('/',jsonParser,function(req,res){
+    console.log("Router get get")
     res.sendFile( __dirname + "/play.html" );
 })
 
 router.post('/',jsonParser,function(req,res){
     console.log("Router get post") //1
-    
     console.log(req.body)
-
     res.json()
 })
 
