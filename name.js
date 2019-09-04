@@ -11,8 +11,9 @@ $(document).ready(function(){
             data : JSON.stringify(data),
             dataType:"json",
             success : function(data) {
-                window.location.href='/play'
+                console.log(data);
             }
         })
+        window.location.href='/play'
     })
 })
