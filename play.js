@@ -14,7 +14,18 @@ router.get('/',function(req,res){
 
 router.post('/',jsonParser,function(req,res){
     console.log("Router get post") //1
+    name = req.body.name
+    date = req.body.date
     res.json({})
+    console.log("Json Sent")
+})
+
+router.post('/data',jsonParser,function(req,res){
+    console.log("Getting name") //1
+    res.json({
+        name: name,
+        date: date
+    })
     console.log("Json Sent")
 })
 
