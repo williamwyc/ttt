@@ -4,6 +4,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 
+app.use(express.static(__dirname));
 app.use("/script",express.static(__dirname + '/script'));
 
 app.get('/', function (req, res) {
