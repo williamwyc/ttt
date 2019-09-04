@@ -2,11 +2,12 @@
     <head>
         <title>Tic-Tac-Toe</title>
         <link rel="stylesheet" type="text/css" href="index.css">
-        <script src="/expressTest.js"></script>
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="name.js"></script>
     </head>
     <body>
-        <form action="http://130.245.168.51:3000/" method="post">
-            Name: <input name = "name"><br>
+        <form id="play" action="/play" method="post">
+            Name: <input id = "name" name = "name"><br>
             <input type="submit" value = "Submit">
         </form>
     </body>

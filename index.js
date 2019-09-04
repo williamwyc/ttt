@@ -1,40 +1,11 @@
-const http = require('http');
-const fs = require('fs');
-const url = require('url');
-const path = require('path');
-const querystring = require("querystring");
+var express = require('express');
 
-var root = path.resolve();
+var app = express();
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({extended: false})
 
-var server = http.createServer();
+app.use('/public', express.static('public'));
 
-server.on('request', function(req,res){
-  // var pathname = url.parse(req.url).pathname;
-  // var filepath = path.join(root,pathname);
-  res.writeHead(200,{'Content-Type':'text/html'})
-  fs.readFile('./index.html',function(err,data){
-    if(err){
-        throw err
-    }
-    res.end(data);
-  })
-});
-server.listen(3000, function(){
-  console.log('Listening...')
-});
-
-// (function (req, res) {
-//   req.on('data', function (chunk) {
-//     post += chunk;
-//   });
-//   req.on('end', function () {
-//     post = querystring.parse(post);
-//     if(post.name) {
-//       res.write(body.name);
-//   } else { 
-      
-//   }
-//   });
-// }).listen(3000, function(){
-//   console.log('Listening...')
-// });
+app.get('/', function (req, res) {
+    res.sendFile( __dirname + "/" + "index.html" );
+})
