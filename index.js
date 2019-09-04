@@ -12,7 +12,9 @@ app.use(express.static(__dirname));
 app.get('/', function (req, res) {
     res.sendFile( __dirname + "/index.html" );
 })
-
+app.post('/',function(req,res){
+    console.log("Post get")
+})
 
 app.listen(3000, function(){
   console.log("Listening...")

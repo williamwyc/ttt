@@ -9,6 +9,7 @@ router.get('/play',function(req,res){
 })
 
 router.post('/',function(req,res){
+    console.log("Router get post")
     res.sendFile(path.join(__dirname+'/..'+'/html/ttt.html'));
 
 })
