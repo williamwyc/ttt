@@ -4,8 +4,7 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 
 router.get('/play',function(req,res){
-    console.log("Router get Get")
-    //res.sendFile(path.join(__dirname+'/play.html'));
+    res.sendFile(path.join(__dirname+'/play.html'));
 
 })
 

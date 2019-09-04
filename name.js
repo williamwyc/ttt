@@ -5,7 +5,7 @@ $(document).ready(function(){
             date: Date.now()
         }
         console.log("data got") // 1
-        e.preventDefault();
+        //e.preventDefault();
         $.ajax({
             type: 'post',
             url: '/play',
