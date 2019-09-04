@@ -3,8 +3,8 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
-var name = require(name.js);
-var play = require(play.js)
+var name = require('/name.js');
+var play = require('/play.js')
 
 
 app.get('/', function (req, res) {
