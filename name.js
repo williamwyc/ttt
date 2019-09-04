@@ -9,10 +9,11 @@ $(document).ready(function(){
             url: '/play',
             contentType: "application/json;charset=UTF-8",
             data : JSON.stringify(data),
-            success : function() {
+            dataType:"json",
+            success : function(data) {
+                window.location.href='/play'
                 $("#name").text(data.name+" ")
                 $("#date").text(data.date)
-                window.location.href='/play'
             }
         })
     })
