@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
+var path = require('path');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 var jsonParser = bodyParser.json()
 var name;
@@ -18,7 +19,7 @@ router.post('/',jsonParser,function(req,res){
         date = req.body.date
     }
     console.log(name,date)
-    res.sendFile(__dirname + "/../play.html");
+    res.sendFile(path.join(__dirname+'/..'+'/html/ttt.html'));
 })
 
 router.post('/play',jsonParser,function(req,res){
