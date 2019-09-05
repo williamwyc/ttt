@@ -6,10 +6,10 @@ var jsonParser = bodyParser.json()
 var name;
 var date;
 
-// router.get('/',function(req,res){
-//     console.log("Router get get")
-//     res.sendFile( __dirname + "/play.html" );
-// })
+router.get('/play',function(req,res){
+    console.log("Router get get")
+    res.sendFile( __dirname + "/play.html" );
+})
 
 router.post('/',jsonParser,function(req,res){
     console.log("Router get post")
@@ -18,7 +18,7 @@ router.post('/',jsonParser,function(req,res){
         name = req.body.name
         date = req.body.date
     }
-    res.json({})
+    res.send();
 })
 
 router.post('/play',jsonParser,function(req,res){
