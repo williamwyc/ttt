@@ -15,8 +15,9 @@ router.post('/',jsonParser,function(req,res){
     console.log("Router get post")
     console.log(req.body)
     name = req.body.name
-    return res.send({
-        name: name
+    return res.json({
+        name: name,
+        date: Date()
     })
 })
 

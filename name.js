@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $("#play").submit(function(e){
         var data = {
-            name: $("#name").val(),
+            name: $("#name").val()
         }
         $.ajax({
             type: 'post',
