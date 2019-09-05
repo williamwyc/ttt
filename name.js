@@ -6,7 +6,7 @@ $(document).ready(function(){
         }
         $.ajax({
             type: 'post',
-            url: '/ttt',
+            url: '/',
             contentType: "application/json;charset=UTF-8",
             data : JSON.stringify(data),
             dataType:"json",
