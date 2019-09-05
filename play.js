@@ -20,10 +20,9 @@ router.post('/',jsonParser,function(req,res){
         date = req.body.date
     }
     console.log(name,date)
-    // console.log("Sending File "+path.join(__dirname+'play.html'))
     return res.json({
-        name: name,
-        date: date
+        name: req.body.name,
+        date: req.body.date
     })
 })
 

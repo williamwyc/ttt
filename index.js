@@ -10,7 +10,6 @@ app.use("/ttt", play)
 app.use(express.static(__dirname));
 
 app.get('/ttt', function (req, res) {
-    console.log("Sending File "+__dirname + "/index.html")
     res.sendFile( __dirname + "/index.html" );
 })
 
