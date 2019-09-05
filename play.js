@@ -18,9 +18,13 @@ router.post('/',jsonParser,function(req,res){
         name = req.body.name
         date = req.body.date
     }
+    res.json({
+        name: name,
+        date: date
+    })
     console.log(name,date)
     console.log("Sending File "+path.join(__dirname+'play.html'))
-    res.sendFile(path.join(__dirname+'/play.html'));
+    //res.sendFile(path.join(__dirname+'/play.html'));
 })
 
 router.post('/play',jsonParser,function(req,res){
