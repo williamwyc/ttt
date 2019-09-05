@@ -5,7 +5,6 @@ var path = require('path');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 var jsonParser = bodyParser.json()
 var name;
-var date;
 
 router.get('/play',function(req,res){
     console.log("Router get get")
@@ -15,13 +14,9 @@ router.get('/play',function(req,res){
 router.post('/',jsonParser,function(req,res){
     console.log("Router get post")
     console.log(req.body)
-    if(req.body!= null && req.body.date!=null){
-        name = req.body.name
-        date = req.body.date
-    }
-    res.json({
-        name: req.body.name,
-        date: req.body.date
+    name = req.body.name
+    return res.send({
+        name: name
     })
 })
 
@@ -29,7 +24,7 @@ router.post('/play',jsonParser,function(req,res){
     console.log("Getting name")
     res.json({
         name: name,
-        date: date
+        date: Date()
     })
     console.log("Json Sent")
 })

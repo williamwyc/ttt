@@ -2,7 +2,6 @@ $(document).ready(function(){
     $("#play").submit(function(e){
         var data = {
             name: $("#name").val(),
-            date: Date()
         }
         $.ajax({
             type: 'post',
