@@ -13,6 +13,7 @@ router.get('/play',function(req,res){
 
 router.post('/',jsonParser,function(req,res){
     console.log("Router get post")
+    console.log(req)
     console.log(req.body)
     if(req.body.name!= null){
         name = req.body.name
