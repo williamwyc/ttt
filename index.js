@@ -13,6 +13,20 @@ app.get('/ttt', function (req, res) {
     res.sendFile( __dirname + "/index.html" );
 })
 
+app.post('/ttt',jsonParser,function(req,res){
+  console.log("Router get post")
+  console.log(req)
+  console.log(req.body)
+  if(req.body.name!= null){
+      name = req.body.name
+  }
+  return res.json({
+      name: name,
+      date: Date()
+  })
+  
+})
+
 app.listen(3000, function(){
   console.log("Listening...")
 })

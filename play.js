@@ -11,19 +11,19 @@ router.get('/play',function(req,res){
     res.sendFile( __dirname + "/play.html" );
 })
 
-router.post('/',jsonParser,function(req,res){
-    console.log("Router get post")
-    console.log(req)
-    console.log(req.body)
-    if(req.body.name!= null){
-        name = req.body.name
-    }
-    return res.json({
-        name: name,
-        date: Date()
-    })
+// router.post('/',jsonParser,function(req,res){
+//     console.log("Router get post")
+//     console.log(req)
+//     console.log(req.body)
+//     if(req.body.name!= null){
+//         name = req.body.name
+//     }
+//     return res.json({
+//         name: name,
+//         date: Date()
+//     })
     
-})
+// })
 
 router.post('/play',jsonParser,function(req,res){
     console.log("Getting name")
