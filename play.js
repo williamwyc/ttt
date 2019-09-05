@@ -16,11 +16,11 @@ router.post('/',jsonParser,function(req,res){
     console.log(req.body)
     if(req.body.name!= null){
         name = req.body.name
-        return res.json({
-            name: name,
-            date: Date()
-        })
     }
+    return res.json({
+        name: name,
+        date: Date()
+    })
     
 })
 
