@@ -19,8 +19,7 @@ router.post('/',jsonParser,function(req,res){
         name = req.body.name
         date = req.body.date
     }
-    console.log(name,date)
-    return res.json({
+    res.json({
         name: req.body.name,
         date: req.body.date
     })
