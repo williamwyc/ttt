@@ -3,24 +3,11 @@
         <title>Tic-Tac-Toe</title>
         <link rel="stylesheet" type="text/css" href="/index.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $.ajax({
-                    url:'/ttt/play',
-                    type:'post',
-                    contentType: "application/json;charset=UTF-8",
-                    dataType:'json',
-                    success:function(data){
-                        $("#name").text(data.name+" ")
-                        $("#date").text(data.date)
-                    }
-                })
-            });
-        </script>
+        <script src="/game.js"></script>
     </head>
     <body>
-        <b>Hello, </b>
+        <!-- <b>Hello, </b>
         <b id = 'name'></b>
-        <b id = 'date'></b>
+        <b id = 'date'></b> -->
     </body>
 </html>
