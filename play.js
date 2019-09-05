@@ -20,7 +20,7 @@ router.post('/',jsonParser,function(req,res){
     }
     console.log(name,date)
     console.log("Sending File "+path.join(__dirname+'play.html'))
-    res.sendFile(path.join(__dirname+'play.html'));
+    res.sendFile(path.join(__dirname+'/play.html'));
 })
 
 router.post('/play',jsonParser,function(req,res){
