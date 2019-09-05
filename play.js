@@ -18,7 +18,7 @@ router.post('/',jsonParser,function(req,res){
         name = req.body.name
         date = req.body.date
     }
-    res.redirect("/play.html")
+    res.json({})
 })
 
 router.post('/play',jsonParser,function(req,res){
