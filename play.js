@@ -21,7 +21,7 @@ router.post('/',jsonParser,function(req,res){
     res.redirect("/play.html")
 })
 
-router.post('/data',jsonParser,function(req,res){
+router.post('/play',jsonParser,function(req,res){
     console.log("Getting name")
     res.json({
         name: name,

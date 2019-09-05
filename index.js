@@ -6,10 +6,10 @@ var urlencodedParser = bodyParser.urlencoded({extended: false})
 
 var play = require("./play.js")
 
-app.use("/play", play)
+app.use("/ttt", play)
 app.use(express.static(__dirname));
 
-app.get('/ttt', function (req, res) {
+app.get('/', function (req, res) {
     res.sendFile( __dirname + "/index.html" );
 })
 
