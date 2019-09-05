@@ -13,12 +13,12 @@ router.get('/play',function(req,res){
 
 router.post('/',jsonParser,function(req,res){
     console.log("Router get post")
-    console.log(req.body)
     if(req.body!= null && req.body.date!=null){
         name = req.body.name
         date = req.body.date
     }
-    res.send();
+    console.log(name,date)
+    res.redirect(__dirname + "/play.html");
 })
 
 router.post('/play',jsonParser,function(req,res){
