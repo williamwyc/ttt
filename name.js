@@ -5,8 +5,8 @@ $(document).ready(function(){
             type: 'post',
             url: '/ttt',
             contentType: "application/json;charset=UTF-8",
-            //data : JSON.stringify(data),
-            data: data,
+            data : JSON.stringify(data),
+            //data: data,
             dataType:"json",
             success : function(data) {
                 window.location.href='/ttt/play'
