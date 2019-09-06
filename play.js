@@ -13,11 +13,11 @@ var name;
 
 router.post('/',jsonParser,function(req,res){
     console.log(req.body)
-    if(req.body.name!= null){
-        name = req.body.name
+    if(req.body.name == null){
         res.sendFile( __dirname + "/play.html" );
     }
     else{
+        name = req.body.name
         res.json({
                 'name': name,
                 'date': Date()
