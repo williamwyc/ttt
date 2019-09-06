@@ -12,7 +12,7 @@ var name;
 // })
 
 router.post('/',jsonParser,function(req,res){
-    console.log(req.body.name)
+    console.log(req.body)
     if(req.body.name!= null){
         name = req.body.name
     }
