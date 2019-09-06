@@ -7,20 +7,7 @@ $(document).ready(function(){
             data : JSON.stringify({'name': $("#name").val()}),
             dataType:"json",
             success : function(data) {
-                $.ajax({
-                    type: 'post',
-                    url: '/ttt',
-                    contentType: "application/json;charset=UTF-8",
-                    dataType:"json"
-                })
-            },
-            error : function(data){
-                $.ajax({
-                    type: 'post',
-                    url: '/ttt',
-                    contentType: "application/json;charset=UTF-8",
-                    dataType:"json"
-                })
+                
             }
         })
     })
