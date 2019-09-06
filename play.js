@@ -43,11 +43,6 @@ router.post('/play',jsonParser,function(req,res){
 })
 
 function check(grid){
-    for(var i=0; i<grid.length; i++){
-        if(grid[i] == " "){
-            return null
-        }
-    }
     for(var i=0;i<7;i+=3){
         if(grid[i]==grid[i+1]&&grid[i+1]==grid[i+2]&&grid[i]!=" "){
             return grid[i]               
@@ -63,6 +58,11 @@ function check(grid){
     }
     if(grid[2]==grid[4]&&grid[4]==grid[6]&&grid[2]!=" "){
         return grid[i]               
+    }
+    for(var i=0; i<grid.length; i++){
+        if(grid[i] == " "){
+            return null
+        }
     }
     return " "
     
