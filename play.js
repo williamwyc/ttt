@@ -17,11 +17,11 @@ router.post('/',jsonParser,function(req,res){
     if(req.body.name!= null){
         name = req.body.name
     }
-    res.sendFile( __dirname + "/play.html" );
-    // res.json({
-    //     'name': name,
-    //     'date': Date()
-    // })
+    //res.sendFile( __dirname + "/play.html" );
+    res.json({
+        'name': name,
+        'date': Date()
+    })
     
 })
 
