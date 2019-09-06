@@ -54,10 +54,10 @@ function check(grid){
         }
     }
     if(grid[0]==grid[4]&&grid[4]==grid[8]&&grid[0]!=" "){
-        return grid[i]             
+        return grid[0]             
     }
     if(grid[2]==grid[4]&&grid[4]==grid[6]&&grid[2]!=" "){
-        return grid[i]               
+        return grid[2]               
     }
     for(var i=0; i<grid.length; i++){
         if(grid[i] == " "){
