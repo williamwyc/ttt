@@ -33,7 +33,7 @@ router.post('/play',jsonParser,function(req,res){
     // console.log("Json Sent")
     grid = req.body.grid
     winner = check(grid)
-    if(winner != null){
+    if(winner == null){
         grid = move(grid)
     }
     res.json({
@@ -71,7 +71,7 @@ function check(grid){
 function move(grid){
     for(i = 0;i<9;i++){
         if(grid[i]== ' '){
-          grid[i]='O'
+          grid[i]= "O"
           return grid
         }
     }
