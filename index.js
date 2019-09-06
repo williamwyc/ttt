@@ -12,7 +12,7 @@ app.use("/ttt", play)
 app.use(express.static(__dirname));
 
 app.get('/ttt', function (req, res) {
-    if(req.name!=null){
+    if(req.body.name!=null){
       res.sendFile( __dirname + "/play.html" );
     }
     else{
