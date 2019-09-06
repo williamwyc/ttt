@@ -17,10 +17,8 @@ router.post('/',jsonParser,function(req,res){
 
 router.post('/play',jsonParser,function(req,res){
     grid = req.body.grid
+    grid = move(grid)
     winner = check(grid)
-    if(winner == null){
-        grid = move(grid)
-    }
     res.json({
         'winner': winner,
         'grid': grid
@@ -60,6 +58,7 @@ function move(grid){
           return grid
         }
     }
+    return grid
 }
 
 module.exports = router;
