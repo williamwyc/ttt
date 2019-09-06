@@ -8,7 +8,8 @@ $(document).ready(function(){
             data : JSON.stringify(data),
             dataType:"json",
             success : function(data) {
-                window.location.href='/ttt'
+                //window.location.href='/ttt'
+                $("#div").load("play.html"); 
             }
         })
     })
