@@ -18,8 +18,8 @@ router.post('/',jsonParser,function(req,res){
         name = req.body.name
     }
     res.json({
-        name: name,
-        date: Date()
+        'name': name,
+        'date': Date()
     })
     
 })
