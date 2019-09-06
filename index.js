@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use("/ttt", play)
 app.use(express.static(__dirname));
+app.engine('.html', require('ejs').renderFile);
 
 app.get('/ttt', function (req, res) {
   res.sendFile( __dirname + "/index.html" );

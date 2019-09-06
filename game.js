@@ -5,16 +5,16 @@ for(var i = 0; i<grid.length; i++){
 }
 
 $(document).ready(function(){
-    $.ajax({
-        url:'/ttt',
-        type:'post',
-        contentType: "application/json;charset=UTF-8",
-        dataType:'json',
-        success:function(data){
-            $("#name").text(data.name+" ")
-            $("#date").text(data.date)
-        }
-    })
+    // $.ajax({
+    //     url:'/ttt',
+    //     type:'post',
+    //     contentType: "application/json;charset=UTF-8",
+    //     dataType:'json',
+    //     success:function(data){
+    //         $("#name").text(data.name+" ")
+    //         $("#date").text(data.date)
+    //     }
+    // })
     $(".cell").click(function(){
         if (winner == null){
             $(this).text("X");
