@@ -9,7 +9,7 @@ var name;
 router.post('/',jsonParser,function(req,res){
     console.log("Post Req")
     console.log(req.body)
-    res.render('/play.html', {
+    res.render('play', {
         'name': name,
         'date': Date()
     })
