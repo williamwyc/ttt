@@ -6,10 +6,10 @@ var urlencodedParser = bodyParser.urlencoded({extended: false})
 var jsonParser = bodyParser.json()
 var name;
 
-router.get('/play',function(req,res){
-    console.log("Router get get")
-    res.sendFile( __dirname + "/play.html" );
-})
+// router.get('/',function(req,res){
+//     console.log("Router get get")
+//     res.sendFile( __dirname + "/play.html" );
+// })
 
 router.post('/',jsonParser,function(req,res){
     console.log("Router get post")
@@ -25,12 +25,6 @@ router.post('/',jsonParser,function(req,res){
 })
 
 router.post('/play',jsonParser,function(req,res){
-    // console.log("Getting name")
-    // res.json({
-    //     name: name,
-    //     date: Date()
-    // })
-    // console.log("Json Sent")
     grid = req.body.grid
     winner = check(grid)
     if(winner == null){

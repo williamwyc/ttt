@@ -8,7 +8,7 @@ $(document).ready(function(){
             data : JSON.stringify(data),
             dataType:"json",
             success : function(data) {
-                window.location.href='/ttt/play'
+                window.location.href='/ttt'
             }
         })
     })
