@@ -12,12 +12,12 @@ var name;
 // })
 
 router.post('/',jsonParser,function(req,res){
-    console.log("Router get post")
-    console.log(req.body)
+    console.log("Router get post" + req.body)
     if(req.body.name!= null){
         name = req.body.name
     }
     //res.sendFile( __dirname + "/play.html" );
+    console.log("Sent JSON")
     res.json({
         'name': name,
         'date': Date()
