@@ -11,10 +11,15 @@ $(document).ready(function(){
                     type: 'post',
                     url: '/ttt',
                     contentType: "application/json;charset=UTF-8",
-                    dataType:"json",
-                    success : function(data) {
-                        
-                    }
+                    dataType:"json"
+                })
+            },
+            error : function(data){
+                $.ajax({
+                    type: 'post',
+                    url: '/ttt',
+                    contentType: "application/json;charset=UTF-8",
+                    dataType:"json"
                 })
             }
         })
