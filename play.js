@@ -10,7 +10,7 @@ router.post('/',jsonParser,function(req,res){
     console.log("Post Req")
     console.log(req.body)
     res.render('play', {
-        'name': name,
+        'name': req.body.name,
         'date': Date()
     })
 })
