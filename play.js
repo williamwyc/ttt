@@ -13,7 +13,6 @@ router.get('/play',function(req,res){
 
 router.post('/',jsonParser,function(req,res){
     console.log("Router get post")
-    console.log(req)
     console.log(req.body)
     if(req.body.name!= null){
         name = req.body.name
@@ -26,12 +25,56 @@ router.post('/',jsonParser,function(req,res){
 })
 
 router.post('/play',jsonParser,function(req,res){
-    console.log("Getting name")
+    // console.log("Getting name")
+    // res.json({
+    //     name: name,
+    //     date: Date()
+    // })
+    // console.log("Json Sent")
+    grid = req.body.grid
+    winner = check(grid)
+    if(winner != null){
+        grid = move(grid)
+    }
     res.json({
-        name: name,
-        date: Date()
+        'winner': winner,
+        'grid': grid
     })
-    console.log("Json Sent")
 })
+
+function check(grid){
+    for(var i=0; i<grid.length; i++){
+        if(grid[i] == " "){
+            return null
+        }
+    }
+    for(var i=0;i<7;i+=3){
+        if(grid[i]==grid[i+1]&&grid[i+1]==grid[i+2]&&grid[i]!=" "){
+            return grid[i]               
+        }
+    }
+    for(var i=0;i<3;i++){
+        if(grid[i]==grid[i+3]&&grid[i+3]==grid[i+6]&&grid[i]!=" "){
+            return grid[i]               
+        }
+    }
+    if(grid[0]==grid[4]&&grid[4]==grid[8]&&grid[0]!=" "){
+        return grid[i]             
+    }
+    if(grid[2]==grid[4]&&grid[4]==grid[6]&&grid[2]!=" "){
+        return grid[i]               
+    }
+    return " "
+    
+}
+
+function move(grid){
+    for(i = 0;i<9;i++){
+        if(grid[i]== ' '){
+          grid[i]='O'
+          return grid
+        }
+    }
+}
 
 module.exports = router;
