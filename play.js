@@ -12,7 +12,6 @@ var name;
 // })
 
 router.post('/',jsonParser,function(req,res){
-    console.log("Router get post" + req.body)
     if(req.body.name!= null){
         name = req.body.name
     }
