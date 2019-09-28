@@ -26,7 +26,7 @@ router.post('/',jsonParser,function(req,res){
             port: 25,
         });  
         var mailOptions = {
-            from: 'youremail@gmail.com',
+            from: 'ubuntu@arknights.com',
             to: data.email,
             subject: 'TTT Game: Verify your account',
             text: "validation key: <" + data.key + ">",

@@ -9,6 +9,7 @@ var MongoClient = require('mongodb').MongoClient;
 
 var play = require("./router/play.js")
 var adduser = require("./router/adduser.js")
+var verify = require("./router/verify.js")
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
