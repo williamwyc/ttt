@@ -7,7 +7,7 @@ var jsonParser = bodyParser.json()
 var MongoClient = require('mongodb').MongoClient;
 
 router.get('/',jsonParser,function(req,res){
-    res.sendFile( __dirname + "../html/verify.html" );
+    res.sendFile( __dirname + "/../html/verify.html" );
 })
 
 router.post('/',jsonParser,function(req,res){
@@ -21,7 +21,7 @@ router.post('/',jsonParser,function(req,res){
         if(result[0].key==data.key||data.key=='abracadabra'){
             db.collection('users').update({'email': data['email']},{ $set:
                 {
-                'valide': 'true'
+                'verify': 'true'
                 }
             })
             res.json({'status':'OK'})
