@@ -7,7 +7,7 @@ var jsonParser = bodyParser.json()
 var MongoClient = require('mongodb').MongoClient;
 
 router.get('/',jsonParser,function(req,res){
-    res.sendFile( __dirname + "/../html/verify.html" );
+    res.sendFile(path.join(__dirname+'/..'+'/html/verify.html'));
 })
 
 router.post('/',jsonParser,function(req,res){

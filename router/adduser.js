@@ -8,7 +8,7 @@ var MongoClient = require('mongodb').MongoClient;
 var nodemailer = require('nodemailer');
 
 router.get('/',jsonParser,function(req,res){
-    res.sendFile( __dirname + "/../html/adduser.html" );
+    res.sendFile(path.join(__dirname+'/..'+'/html/adduser.html'));
 })
 
 router.post('/',jsonParser,function(req,res){
