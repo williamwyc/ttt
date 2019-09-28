@@ -11,14 +11,16 @@ router.get('/',jsonParser,function(req,res){
 })
 
 router.post('/',jsonParser,function(req,res){
-    console.log("Verify")
+    console.log("Verify an account")
     data = req.body
     var db = req.app.locals.db
     db.collection("users").find({'email': data.email}).toArray(function(err,result){
         if(err){
+            console.log(err)
             res.json({'status':'ERROR'})
         }
         if(result[0].key==data.key||data.key=='abracadabra'){
+            console.log("Verified")
             db.collection('users').update({'email': data.email},{ $set:
                 {
                 'verify': 'true'
