@@ -13,7 +13,7 @@ router.get('/',jsonParser,function(req,res){
 router.post('/',jsonParser,function(req,res){
     console.log("Verify")
     data = req.body
-    var db = req.app.local.db
+    var db = req.app.locals.db
     db.collection("users").find({'email': data[email]}.toArray(function(err,result){
         if(err){
             res.json({'status':'ERROR'})

@@ -15,7 +15,7 @@ router.post('/',jsonParser,function(req,res){
     data = req.body
     data.key = Math.floor((Math.random() * 8999) + 1000);
     data.verify = false
-    var db = req.app.local.db
+    var db = req.app.locals.db
     db.collection("users").insertOne(data, function(err, res){
         if(err){
             res.json({'status':"ERROR"})
