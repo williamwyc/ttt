@@ -26,12 +26,12 @@ app.get('/', function (req, res) {
   res.sendFile( __dirname + "/html/index.html" );
 })
 
-MongoClient.connect('mongodb://130.245.168.51:27017',function(err,db){
+MongoClient.connect('mongodb://localhost:27017',function(err,client){
   if (err){
     throw err;
   }
   console.log('Mongodb Connected');
-  app.locals.db = db.db('ttt');
+  app.locals.db = client.db('ttt');
   app.listen(3000, function(){
     console.log("Listening...")
   })
