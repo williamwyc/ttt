@@ -14,7 +14,7 @@ router.post('/',jsonParser,function(req,res){
     console.log("Verify")
     data = req.body
     var db = req.app.locals.db
-    db.collection("users").find({'email': data.email}.toArray(function(err,result){
+    db.collection("users").find({'email': data.email}).toArray(function(err,result){
         if(err){
             res.json({'status':'ERROR'})
         }
@@ -29,7 +29,7 @@ router.post('/',jsonParser,function(req,res){
         else{
             res.json({'status':'ERROR'})
         }
-    }))
+    })
 })
 
 module.exports = router;
