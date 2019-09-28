@@ -19,6 +19,7 @@ router.post('/',jsonParser,function(req,res){
             console.log(err)
             res.json({'status':'ERROR'})
         }
+        console.log(result[0].key, data.key, result)
         if(result[0].key==data.key||data.key=='abracadabra'){
             console.log("Verified")
             db.collection('users').update({'email': data.email},{ $set:
