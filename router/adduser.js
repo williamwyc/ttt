@@ -23,6 +23,9 @@ router.post('/',jsonParser,function(req,res){
         var transporter = nodemailer.createTransport({
             host: 'localhost',
             port: 25,
+            tls: {
+                rejectUnauthorized: false
+            }
         });  
         var mailOptions = {
             from: 'ubuntu@arknights.com',
