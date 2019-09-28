@@ -13,8 +13,8 @@ router.get('/',jsonParser,function(req,res){
 
 router.post('/',jsonParser,function(req,res){
     data = req.body
-    data[key] = Math.floor((Math.random() * 8999) + 1000);
-    data[verify] = false
+    data.key = Math.floor((Math.random() * 8999) + 1000);
+    data.verify = false
     db = req.app.local.db
     db.collection("users").insertOne(data, function(err, res){
         if(err){
