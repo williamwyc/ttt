@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 var jsonParser = bodyParser.json()
-var name;
 
 router.post('/',jsonParser,function(req,res){
     console.log("Post Req")

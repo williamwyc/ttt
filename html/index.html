@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Tic-Tac-Toe</title>
+        <link rel="stylesheet" type="text/css" href="/index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="login.js"></script>
+    </head>
+    <body>
+        <form id="login" action="/ttt" method="post">
+            Username: <input id = "name" name = "name"><br>
+            Password: <input id = "password" name = "password"><br>
+            <input type="submit" value = "Submit">
+        </form>
+        <button onclick="window.location.href='/adduser'">Add a user</button>
+        <button onclick="window.location.href='/verify'">Verify</button>
+    </body>
+</html>
