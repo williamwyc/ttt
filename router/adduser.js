@@ -12,7 +12,6 @@ router.get('/',jsonParser,function(req,res){
 })
 
 router.post('/',jsonParser,function(req,res){
-    console.log("AddUser"+req.body)
     data = req.body
     data[key] = Math.floor((Math.random() * 8999) + 1000);
     data[verify] = false
