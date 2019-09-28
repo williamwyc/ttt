@@ -12,7 +12,9 @@ $(document).ready(function(){
             data : JSON.stringify(data),
             dataType:"json",
             success : function(data) {
-                
+                if (data.status=='OK'){
+                    window.location.href='/'
+                }
             }
         })
     })
