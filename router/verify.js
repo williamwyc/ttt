@@ -31,3 +31,5 @@ router.post('/',jsonParser,function(req,res){
         }
     }))
 })
+
+module.exports = router;
