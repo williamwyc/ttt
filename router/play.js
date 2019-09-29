@@ -60,10 +60,10 @@ router.post('/play',jsonParser,function(req,res){
             if(grid[move] == " "){
                 grid[move] = "X"
                 winner = check(grid)
-            }
-            if(winner == null ){
-                grid = ai(grid)
-                winner = check(grid)
+                if(winner == null){
+                    grid = ai(grid)
+                    winner = check(grid)
+                }
             }
         }
         db.collection('users').update({'username': user},{ $set:
