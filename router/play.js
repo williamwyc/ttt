@@ -50,7 +50,8 @@ router.post('/play',jsonParser,function(req,res){
     var user = req.session.user
     var move = data.move
     db.collection("users").find({'username': user}).toArray(function(err, result){
-        if(err || result.length<1){
+        if(err || result.length!=1){
+            console.log("Did not login")
             res.json({'status': "ERROR"})
         }
         console.log(result[0])
