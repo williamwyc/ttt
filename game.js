@@ -1,9 +1,19 @@
-var winner = null
-var grid = new Array(9)
-for(var i = 0; i<grid.length; i++){
-    grid[i] = " "
-}
 $(document).ready(function(){
+    var winner
+    var grid
+    $.ajax({
+        url:"/ttt/unfinished",
+        type:"POST",
+        data:JSON.stringify({}),
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+        success: function(data){
+            grid = data.grid;
+            for(var i=0; i<9;i++){
+              $('#' + i).text(grid[i]);
+            }
+        }
+    })
     $(".cell").click(function(){
         if (winner == null){
             $(this).text("X");
@@ -28,7 +38,7 @@ $(document).ready(function(){
                         }
                         for(var i=0; i<9;i++){
                           $('#' + i).text(grid[i]);
-                      }
+                        }
                     }
                   })
             }
