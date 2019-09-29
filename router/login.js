@@ -14,6 +14,7 @@ router.post('/',jsonParser,function(req,res){
     data = req.body
     var db = req.app.locals.db
     db.collection("users").find({'username': data.username}).toArray(function(err, result){
+        console.log(req.session)
         if(err || result.length<1){
             res.json({'status': "ERROR"})
         }
