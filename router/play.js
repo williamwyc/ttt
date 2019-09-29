@@ -85,14 +85,15 @@ router.post('/play',jsonParser,function(req,res){
                 }
                 else{
                     console.log("Add a game")
+                    db.collection('user').update({'username': user},{ $set:
+                        {
+                        'grid': [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+                        }
+                    })
+                    console.log("Clear current grid")
                 }
             })
 
-            db.collection('user').update({'username': user},{ $set:
-                {
-                'grid': [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-                }
-            })
         }
         res.json({
             'winner': winner,
