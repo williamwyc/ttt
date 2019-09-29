@@ -35,6 +35,7 @@ router.post('/',jsonParser,function(req,res){
 
 router.post('/unfinished',jsonParser,function(req,res){
     var user = req.session.user
+    var db = req.app.locals.db
     db.collection("users").find({'username': user}).toArray(function(err, result){
         if(err || result.length<1){
             res.json({'status': "ERROR"})
