@@ -7,7 +7,7 @@ var jsonParser = bodyParser.json()
 
 router.post('/', jsonParser, function(req, res){
     id = req.data.id
-    db.collections("games").find({'id': id}).toArray(function(err, result){
+    db.collection("games").find({'id': id}).toArray(function(err, result){
         if(err || result.length!=1){
             res.json({'status': "ERROR"})
         }
