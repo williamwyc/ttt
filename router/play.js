@@ -15,7 +15,7 @@ var jsonParser = bodyParser.json()
 // })
 
 router.get('/',jsonParser,function(req,res){
-    console.log(req.session.user)
+    console.log("Current User: "+ req.session.user)
     if(req.session.user!=null){
         res.sendFile(path.join(__dirname+'/..'+'/html/play.html'));
     }
@@ -25,6 +25,7 @@ router.get('/',jsonParser,function(req,res){
 })
 
 router.post('/',jsonParser,function(req,res){
+    console.log("Current User: "+ req.session.user)
     if(req.session.user!=null){
         res.sendFile(path.join(__dirname+'/..'+'/html/play.html'));
     }
@@ -50,11 +51,12 @@ router.post('/play',jsonParser,function(req,res){
     var user = req.session.user
     var move = data.move
     db.collection("users").find({'username': user}).toArray(function(err, result){
-        if(err || result.length!=1){
+        if(err || result.length<1){
             console.log("Did not login")
             res.json({'status': "ERROR"})
         }
-        console.log(result[0])
+        else{
+        console.log("INFO: "+ result[0])
         grid = result[0].grid;
         console.log("Grid: "+grid)
         winner = check(grid)
@@ -103,6 +105,7 @@ router.post('/play',jsonParser,function(req,res){
             'winner': winner,
             'grid': grid
         })
+    }
     })
 })
 
