@@ -21,11 +21,11 @@ app.use("/verify", verify)
 app.use("/login", login)
 app.use("/logout", logout)
 app.use(express.static(__dirname));
+
 app.use(cookieSession({
   name: 'session',
   keys: ['amiya'],
 }))
-
 
 app.engine('html', require('ejs').renderFile);
 app.set('views', path.join(__dirname));
