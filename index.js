@@ -11,6 +11,7 @@ var play = require("./router/play.js")
 var adduser = require("./router/adduser.js")
 var verify = require("./router/verify.js")
 var login = require("./router/login.js")
+var logout = require("./router/logout.js")
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -18,6 +19,7 @@ app.use("/ttt", play)
 app.use("/adduser", adduser)
 app.use("/verify", verify)
 app.use("/login", login)
+app.use("/logout", logout)
 app.use(express.static(__dirname));
 app.use(cookieSession({
   name: 'session',

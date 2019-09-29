@@ -23,6 +23,15 @@ router.get('/',jsonParser,function(req,res){
     }
 })
 
+router.post('/',jsonParser,function(req,res){
+    if(req.session.user!=null){
+        res.sendFile(path.join(__dirname+'/..'+'/html/play.html'));
+    }
+    else{
+        res.redirect('/');
+    }
+})
+
 router.post('/play',jsonParser,function(req,res){
     grid = req.body.grid
     grid = move(grid)
