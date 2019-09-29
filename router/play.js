@@ -43,16 +43,6 @@ router.post('/unfinished',jsonParser,function(req,res){
     })
 })
 
-// router.post('/play',jsonParser,function(req,res){
-//     grid = req.body.grid
-//     grid = move(grid)
-//     winner = check(grid)
-//     res.json({
-//         'winner': winner,
-//         'grid': grid
-//     })
-// })
-
 router.post('/play',jsonParser,function(req,res){
     data = req.body
     var db = req.app.locals.db
@@ -63,8 +53,10 @@ router.post('/play',jsonParser,function(req,res){
             res.json({'status': "ERROR"})
         }
         grid = result[0].grid;
-        if(move != null && grid[move] == " "){
-            grid[move] = "X"
+        if(move != null){
+            if(grid[move] == " "){
+                grid[move] = "X"
+            }
         }
         winner = check(grid)
         if(winner == null){
