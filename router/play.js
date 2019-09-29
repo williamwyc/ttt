@@ -57,7 +57,7 @@ router.post('/play',jsonParser,function(req,res){
         }
         winner = check(grid)
         if(winner == null){
-            grid = move(grid)
+            grid = ai(grid)
             winner = check(grid)
         }
         db.collection('users').update({'username': user},{ $set:
@@ -123,7 +123,7 @@ function check(grid){
     
 }
 
-function move(grid){
+function ai(grid){
     for(i = 0;i<9;i++){
         if(grid[i]== ' '){
           grid[i]= "O"
