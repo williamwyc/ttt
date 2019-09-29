@@ -28,7 +28,7 @@ router.post('/',jsonParser,function(req,res){
             console.log("Verified")
             db.collection('users').update({'email': data.email},{ $set:
                 {
-                'verify': 'true'
+                'verify': true
                 }
             })
             res.json({'status':'OK'})

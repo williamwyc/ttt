@@ -17,7 +17,8 @@ router.post('/',jsonParser,function(req,res){
         if(err || result.length<1){
             res.json({'status': "ERROR"})
         }
-        else if(result[0].password == data.password){
+        console.log(result[0])
+        if(result[0].password == data.password && result[0].verify == true){
             req.session.user = data.username
             res.json({'status': "OK"})
         }
