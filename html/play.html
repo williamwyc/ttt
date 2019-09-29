@@ -6,7 +6,8 @@
         <script src="/game.js"></script>
     </head>
     <body>
-        <b>Hello <%=name%>, <%=date%></b>
+        <!-- <b>Hello <%=name%>, <%=date%></b> -->
+        <b>Hello! It's me.</b> 
         <table id ="game">
             <tr>
                 <td class="cell" id="0" ></td>
@@ -25,5 +26,8 @@
             </tr>
             </table>
         <b id = 'winner'></b>
+        <form id="logout" action="/logout" method="post">
+            <input type="submit" value = "Log Out">
+        </form>
     </body>
 </html>

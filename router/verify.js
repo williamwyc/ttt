@@ -19,6 +19,10 @@ router.post('/',jsonParser,function(req,res){
             console.log(err)
             res.json({'status':'ERROR'})
         }
+        if(result.length<1){
+            console.log('Not found')
+            res.json({'status':'ERROR'})
+        }
         console.log(result[0].key, data.key, result)
         if(result[0].key==data.key||data.key=='abracadabra'){
             console.log("Verified")

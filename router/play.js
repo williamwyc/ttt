@@ -5,13 +5,22 @@ var path = require('path');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 var jsonParser = bodyParser.json()
 
-router.post('/',jsonParser,function(req,res){
-    console.log("Post Req")
-    console.log(req.body)
-    res.render('play', {
-        'name': req.body.name,
-        'date': Date()
-    })
+// router.post('/',jsonParser,function(req,res){
+//     console.log("Post Req")
+//     console.log(req.body)
+//     res.render('play', {
+//         'name': req.body.name,
+//         'date': Date()
+//     })
+// })
+
+router.get('/',jsonParser,function(req,res){
+    if(req.session.user!=null){
+        res.sendFile(path.join(__dirname+'/..'+'/html/play.html'));
+    }
+    else{
+        res.redirect('/');
+    }
 })
 
 router.post('/play',jsonParser,function(req,res){
