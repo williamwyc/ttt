@@ -54,7 +54,7 @@ router.post('/play',jsonParser,function(req,res){
             res.json({'status': "ERROR"})
         }
         grid = result[0].grid;
-        console.log(grid)
+        console.log("Grid: "+grid)
         if(move != null){
             if(grid[move] == " "){
                 grid[move] = "X"
@@ -86,14 +86,14 @@ router.post('/play',jsonParser,function(req,res){
                 }
                 else{
                     console.log("Add a game")
-                    db.collection('user').update({'username': user},{ $set:
-                        {
-                        'grid': [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-                        }
-                    })
-                    console.log("Clear current grid")
                 }
             })
+            db.collection('users').update({'username': user},{ $set:
+                {
+                'grid': [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+                }
+            })
+            console.log("Clear current grid")
 
         }
         res.json({
