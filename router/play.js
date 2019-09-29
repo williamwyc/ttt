@@ -32,13 +32,68 @@ router.post('/',jsonParser,function(req,res){
     }
 })
 
+// router.post('/play',jsonParser,function(req,res){
+//     grid = req.body.grid
+//     grid = move(grid)
+//     winner = check(grid)
+//     res.json({
+//         'winner': winner,
+//         'grid': grid
+//     })
+// })
+
 router.post('/play',jsonParser,function(req,res){
-    grid = req.body.grid
-    grid = move(grid)
-    winner = check(grid)
-    res.json({
-        'winner': winner,
-        'grid': grid
+    data = req.body
+    var db = req.app.locals.db
+    var user = req.session.user
+    var move = data.move
+    db.collection("users").find({'username': user}).toArray(function(err, result){
+        if(err || result.length<1){
+            res.json({'status': "ERROR"})
+        }
+        grid = result[0].grid;
+        if(move != null){
+            grid[move] = "X"
+        }
+        winner = check(grid)
+        if(winner == null){
+            grid = move(grid)
+            winner = check(grid)
+        }
+        db.collection('users').update({'username': user},{ $set:
+            {
+            'grid': grid
+            }
+        })
+        if(winner != null){
+            start_date = Date()
+            game = {
+                'id': user+start_date,
+                'start_date': start_date,
+                'grid': grid,
+                'winner': winner,
+                'user': user
+            }
+
+            db.collection('games').insertOne(game, function(err, result){
+                if(err){
+                    console.log(err)
+                }
+                else{
+                    console.log("Add a game")
+                }
+            })
+
+            db.collection('user').update({'username': user},{ $set:
+                {
+                'grid': [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+                }
+            })
+        }
+        res.json({
+            'winner': winner,
+            'grid': grid
+        })
     })
 })
 

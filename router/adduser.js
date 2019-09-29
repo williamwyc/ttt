@@ -15,6 +15,11 @@ router.post('/',jsonParser,function(req,res){
     data = req.body
     data.key = Math.floor((Math.random() * 8999) + 1000);
     data.verify = false
+    var grid = new Array(9)
+    for(var i = 0; i<grid.length; i++){
+        grid[i] = " "
+    }
+    data.grid = grid
     var db = req.app.locals.db
     db.collection("users").insertOne(data, function(err, result){
         if(err){

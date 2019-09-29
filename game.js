@@ -3,18 +3,16 @@ var grid = new Array(9)
 for(var i = 0; i<grid.length; i++){
     grid[i] = " "
 }
-
 $(document).ready(function(){
     $(".cell").click(function(){
         if (winner == null){
             $(this).text("X");
             i = $(this).attr("id")
             if(grid[i] == " "){
-                grid[i] = "X"
                 $.ajax({
                     url:"/ttt/play",
                     type:"POST",
-                    data:JSON.stringify({'grid' : grid}),
+                    data:JSON.stringify({'move' : i}),
                     contentType:"application/json; charset=utf-8",
                     dataType:"json",
                     success: function(data){

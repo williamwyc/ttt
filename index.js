@@ -12,6 +12,9 @@ var adduser = require("./router/adduser.js")
 var verify = require("./router/verify.js")
 var login = require("./router/login.js")
 var logout = require("./router/logout.js")
+var listgames = require("./router/listgames.js")
+var getgame = require("./router/getgame.js")
+var getscore = require("./router/getscore.js")
 
 app.use(cookieSession({
   name: 'session',
@@ -25,6 +28,9 @@ app.use("/adduser", adduser)
 app.use("/verify", verify)
 app.use("/login", login)
 app.use("/logout", logout)
+app.use("/listgames", listgames)
+app.use("/getgame", getgame)
+app.use("/getscore", getscore)
 app.use(express.static(__dirname));
 
 app.engine('html', require('ejs').renderFile);
