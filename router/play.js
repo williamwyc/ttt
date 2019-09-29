@@ -53,9 +53,10 @@ router.post('/play',jsonParser,function(req,res){
         if(err || result.length<1){
             res.json({'status': "ERROR"})
         }
+        console.log(result[0])
         grid = result[0].grid;
-        winner = check(grid)
         console.log("Grid: "+grid)
+        winner = check(grid)
         if(move != null){
             if(grid[move] == " "){
                 grid[move] = "X"
