@@ -6,7 +6,9 @@ var urlencodedParser = bodyParser.urlencoded({extended: false})
 var jsonParser = bodyParser.json()
 
 router.post('/', jsonParser, function(req, res){
-    id = req.data.id
+    console.log("Getgame")
+    console.log(req.body)
+    id = req.body.id
     db.collection("games").find({'id': id}).toArray(function(err, result){
         if(err || result.length!=1){
             res.json({'status': "ERROR"})
