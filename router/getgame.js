@@ -8,6 +8,7 @@ var jsonParser = bodyParser.json()
 router.post('/', jsonParser, function(req, res){
     console.log("Getgame")
     console.log(req.body)
+    var db = req.app.locals.db
     id = req.body.id
     db.collection("games").find({'id': id}).toArray(function(err, result){
         if(err || result.length!=1){
