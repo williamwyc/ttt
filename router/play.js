@@ -15,6 +15,7 @@ var jsonParser = bodyParser.json()
 // })
 
 router.get('/',jsonParser,function(req,res){
+    console.log(req.session.user)
     if(req.session.user!=null){
         res.sendFile(path.join(__dirname+'/..'+'/html/play.html'));
     }
@@ -52,7 +53,7 @@ router.post('/play',jsonParser,function(req,res){
             res.json({'status': "ERROR"})
         }
         grid = result[0].grid;
-        if(move != null){
+        if(move != null && grid[move] == " "){
             grid[move] = "X"
         }
         winner = check(grid)
