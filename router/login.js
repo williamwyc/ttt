@@ -15,6 +15,8 @@ router.post('/',jsonParser,function(req,res){
     var db = req.app.locals.db
     db.collection("users").find({'username': data.username}).toArray(function(err, result){
         if(err || result.length<1){
+            console.log(err)
+            console.log("LEN")
             res.json({'status': "ERROR"})
         }
         console.log(result[0])
@@ -23,6 +25,7 @@ router.post('/',jsonParser,function(req,res){
             res.json({'status': "OK"})
         }
         else{
+            console.log("Wrong pwd")
             res.json({'status': "ERROR"})
         }
     })
