@@ -54,16 +54,17 @@ router.post('/play',jsonParser,function(req,res){
             res.json({'status': "ERROR"})
         }
         grid = result[0].grid;
+        winner = check(grid)
         console.log("Grid: "+grid)
         if(move != null){
             if(grid[move] == " "){
                 grid[move] = "X"
+                winner = check(grid)
             }
-        }
-        winner = check(grid)
-        if(winner == null){
-            grid = ai(grid)
-            winner = check(grid)
+            if(winner == null ){
+                grid = ai(grid)
+                winner = check(grid)
+            }
         }
         db.collection('users').update({'username': user},{ $set:
             {
