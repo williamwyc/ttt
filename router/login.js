@@ -13,6 +13,8 @@ router.get('/',jsonParser,function(req,res){
 router.post('/',jsonParser,function(req,res){
     data = req.body
     var db = req.app.locals.db
+    console.log("DATA!!!!!")
+    console.log(data)
     db.collection("users").find({'username': data.username}).toArray(function(err, result){
         if(err || result.length<1){
             console.log(err)
@@ -22,7 +24,7 @@ router.post('/',jsonParser,function(req,res){
         console.log(result[0])
         if(result[0].password == data.password && result[0].verify == true){
             req.session.user = data.username
-            console.log("User login: "+req.session.user)
+            //console.log("User login: "+req.session.user)
             res.json({'status': "OK"})
         }
         else{
